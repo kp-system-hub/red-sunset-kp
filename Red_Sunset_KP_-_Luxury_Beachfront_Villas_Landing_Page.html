@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Sunset KP - Ultra-Boutique Beachfront Living in Koh Phangan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --ivory: #FAF8F3;
+            --charcoal: #2A2A2A;
+            --slate: #4A4F57;
+            --gold: #C9A66B;
+            --sand: #D8C7A0;
+            --navy: #0F1C2E;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--ivory);
+            color: var(--charcoal);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5.5vw, 52px);
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--navy);
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: var(--slate);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 500;
+            border: 2px solid var(--gold);
+            background: transparent;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 0;
+            min-height: 48px;
+        }
+        
+        .btn:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--charcoal);
+            border-color: var(--charcoal);
+        }
+        
+        .info-chips {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .chip {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid var(--sand);
+            color: var(--slate);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+        }
+        
+        /* Highlights Section */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .highlight-item {
+            text-align: center;
+        }
+        
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--gold);
+        }
+        
+        .highlight-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+        
+        .highlight-desc {
+            font-size: 14px;
+            color: var(--slate);
+            line-height: 1.5;
+        }
+        
+        /* Villas Section */
+        .villas-section {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .villa-card {
+            background: var(--ivory);
+            margin-bottom: 60px;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .villa-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+        }
+        
+        .villa-header {
+            margin-bottom: 30px;
+        }
+        
+        .villa-name {
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        
+        .villa-distance {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--navy);
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(15,28,46,0.2);
+        }
+        
+        .villa-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .villa-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .villa-specs h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--slate);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .spec-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .spec-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+        
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            color: var(--slate);
+        }
+        
+        .spec-value {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        
+        .villa-features {
+            padding-left: 20px;
+        }
+        
+        .villa-features h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--slate);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .villa-features ul {
+            list-style: none;
+        }
+        
+        .villa-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 20px;
+            color: var(--slate);
+            font-size: 15px;
+        }
+        
+        .villa-features li:before {
+            content: '◈';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        
+        .villa-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--sand);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .villa-price {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--gold);
+        }
+        
+        .villa-price-sub {
+            font-size: 14px;
+            color: var(--slate);
+            margin-top: 5px;
+        }
+        
+        .villa-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-small {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            padding: 80px 0;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--sand);
+        }
+        
+        .comparison-table thead {
+            background: var(--ivory);
+        }
+        
+        .comparison-table th {
+            font-weight: 500;
+            color: var(--navy);
+            font-size: 18px;
+        }
+        
+        .comparison-table tbody tr:hover {
+            background: var(--ivory);
+        }
+        
+        .comparison-table tbody td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--slate);
+        }
+        
+        /* Lifestyle Section */
+        .lifestyle-section {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .lifestyle-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: var(--slate);
+            line-height: 1.8;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background: var(--ivory);
+        }
+        
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-caption {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--slate);
+            font-style: italic;
+        }
+        
+        /* Legal Section */
+        .legal-section {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .legal-box {
+            background: var(--ivory);
+            padding: 30px;
+            border-left: 3px solid var(--gold);
+            margin-bottom: 30px;
+        }
+        
+        .legal-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        
+        .legal-text {
+            color: var(--slate);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-cta {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .footer-btn {
+            background: var(--gold);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+        
+        .footer-btn:hover {
+            background: white;
+            color: var(--navy);
+        }
+        
+        .footer-contact {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        /* Sticky WhatsApp Button */
+        .sticky-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .sticky-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .sticky-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Total Price Highlight */
+        .total-highlight {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 16px;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 3px solid var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Red Sunset KP — Rare Beachfront Villas in Koh Phangan</h1>
+            <p class="subtitle">Only 3 exclusive oceanfront villas on Thailand's dream island. Own your private beach paradise.</p>
+            
+            <!-- Hero Image -->
+            <div class="hero-image">
+                <img src="Front_Image.jpg" alt="Red Sunset KP - Aerial View of Beachfront Villas" loading="eager">
+            </div>
+            
+            <p style="font-size: 16px; color: var(--slate); margin-bottom: 20px;">🏝️ Tropical island paradise • Walking distance to Zen Beach • Year-round perfect weather</p>
+            <p class="tagline">Choose Your View, Own Your Dream</p>
+            
+            <div class="hero-buttons">
+                <a href="https://wa.me/66967907754" class="btn btn-primary">
+                    <span>💬</span> Message on WhatsApp
+                </a>
+                <a href="#villas" class="btn">
+                    Explore the Villas
+                </a>
+            </div>
+            
+            <div class="info-chips">
+                <div class="chip">West Coast Location</div>
+                <div class="chip">Turn-Key Delivery</div>
+                <div class="chip">12-15% Annual ROI</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Highlights -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Project Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <div class="highlight-icon">🏖️</div>
+                    <h3 class="highlight-title">Direct Beach Access</h3>
+                    <p class="highlight-desc">Private pathway to pristine west coast beach</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🌅</div>
+                    <h3 class="highlight-title">Sea Views</h3>
+                    <p class="highlight-desc">Panoramic ocean views from pools and terraces</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🏠</div>
+                    <h3 class="highlight-title">Tropical Modern</h3>
+                    <p class="highlight-desc">High ceilings, natural materials, indoor-outdoor flow</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🏊</div>
+                    <h3 class="highlight-title">Private Pools with Sea View</h3>
+                    <p class="highlight-desc">Elevated terrace pools overlooking the ocean</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🔑</div>
+                    <h3 class="highlight-title">Turn-Key</h3>
+                    <p class="highlight-desc">Fully furnished, move-in ready</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">📜</div>
+                    <h3 class="highlight-title">Flexible Ownership</h3>
+                    <p class="highlight-desc">Freehold or Leasehold options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Villas Section -->
+    <section class="villas-section" id="villas">
+        <div class="container">
+            <h2 class="section-title">Choose Your Villa</h2>
+            
+            <!-- Villa 1 -->
+            <div class="villa-card">
+                <div class="villa-header">
+                    <h3 class="villa-name">Villa 1 — Beachfront Signature</h3>
+                    <span class="villa-distance">~12m to the sea • True West Coast Beachfront</span>
+                </div>
+                
+                <div class="villa-content">
+                    <div class="villa-specs">
+                        <h4>Specifications</h4>
+                        <ul class="spec-list">
+                            <li>
+                                <span class="spec-label">Indoor (enclosed)</span>
+                                <span class="spec-value">167 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Terraces</span>
+                                <span class="spec-value">123 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Pool</span>
+                                <span class="spec-value">31 m²</span>
+                            </li>
+                            <li class="total-highlight">
+                                <span class="spec-label">Total Area</span>
+                                <span class="spec-value">321 m²</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="villa-features">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Single level design</li>
+                            <li>Direct beachfront position</li>
+                            <li>Open sea views</li>
+                            <li>Largest pool in the project (32 m²)</li>
+                            <li>Elevated pool terrace with ocean views</li>
+                            <li>Premium corner location</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="villa-footer">
+                    <div class="villa-price-box">
+                        <div class="villa-price">€1,170,000</div>
+                        <div class="villa-price-sub">$1,365,000 | ฿44,900,000</div>
+                    </div>
+                    <div class="villa-buttons">
+                        <a href="https://drive.google.com/file/d/1LIL4Fgh-arloFpjmdHS2k4GhPnoQ583r/view?usp=sharing" target="_blank" class="btn btn-small">📐 View Floor Plan</a>
+                        <a href="https://wa.me/66967907754?text=Interested%20in%20Villa%201%20%E2%80%93%20Beachfront%20Signature" class="btn btn-primary btn-small">Message on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Villa 2 -->
+            <div class="villa-card">
+                <div class="villa-header">
+                    <h3 class="villa-name">Villa 2 — Elevated Sea View</h3>
+                    <span class="villa-distance">~50m to the sea • Elevated Position</span>
+                </div>
+                
+                <div class="villa-content">
+                    <div class="villa-specs">
+                        <h4>Specifications</h4>
+                        <ul class="spec-list">
+                            <li>
+                                <span class="spec-label">Indoor (enclosed)</span>
+                                <span class="spec-value">140 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Terraces</span>
+                                <span class="spec-value">50 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Pool</span>
+                                <span class="spec-value">22 m²</span>
+                            </li>
+                            <li class="total-highlight">
+                                <span class="spec-label">Total Area</span>
+                                <span class="spec-value">212 m²</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="villa-features">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Single level, elevated design</li>
+                            <li>Sea view pool terrace (22 m²)</li>
+                            <li>Private beach access</li>
+                            <li>Above Villa 1 roofline for views</li>
+                            <li>Perfect sunset orientation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="villa-footer">
+                    <div class="villa-price-box">
+                        <div class="villa-price">€910,000</div>
+                        <div class="villa-price-sub">$1,065,000 | ฿34,900,000</div>
+                    </div>
+                    <div class="villa-buttons">
+                        <a href="https://drive.google.com/file/d/1ywi3K4TsGkymY4AjwmrLChUakI1VxOs6/view?usp=sharing" target="_blank" class="btn btn-small">📐 View Floor Plan</a>
+                        <a href="https://wa.me/66967907754?text=Interested%20in%20Villa%202%20%E2%80%93%20Elevated%20Sea%20View" class="btn btn-primary btn-small">Message on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Villa 3 -->
+            <div class="villa-card">
+                <div class="villa-header">
+                    <h3 class="villa-name">Villa 3 — Grand Family Duplex</h3>
+                    <span class="villa-distance">~80m to the sea • Two-Story Design</span>
+                </div>
+                
+                <div class="villa-content">
+                    <div class="villa-specs">
+                        <h4>Specifications</h4>
+                        <ul class="spec-list">
+                            <li>
+                                <span class="spec-label">Ground Floor</span>
+                                <span class="spec-value">117 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Ground Floor Terrace</span>
+                                <span class="spec-value">45 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Second Floor</span>
+                                <span class="spec-value">68 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Second Floor Terrace</span>
+                                <span class="spec-value">61 m²</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Pool</span>
+                                <span class="spec-value">22 m²</span>
+                            </li>
+                            <li class="total-highlight">
+                                <span class="spec-label">Total Area</span>
+                                <span class="spec-value">313 m²</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="villa-features">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>4 master suites</li>
+                            <li>Two floors with high ceilings</li>
+                            <li>Elevated pool with sea views</li>
+                            <li>Open sea view from upper terrace</li>
+                            <li>Largest total area (313 m²)</li>
+                            <li>Family-friendly layout</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="villa-footer">
+                    <div class="villa-price-box">
+                        <div class="villa-price">€780,000</div>
+                        <div class="villa-price-sub">$915,000 | ฿29,900,000</div>
+                    </div>
+                    <div class="villa-buttons">
+                        <a href="https://drive.google.com/file/d/1BqKfDggK_ea5Cxj_6Wvcchn07rGGTf_q/view?usp=sharing" target="_blank" class="btn btn-small">📐 View Floor Plan</a>
+                        <a href="https://wa.me/66967907754?text=Interested%20in%20Villa%203%20%E2%80%93%20Grand%20Family%20Duplex" class="btn btn-primary btn-small">Message on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Comparison -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Quick Comparison</h2>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Villa 1</th>
+                            <th>Villa 2</th>
+                            <th>Villa 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Distance to Sea</td>
+                            <td>~12m</td>
+                            <td>~50m</td>
+                            <td>~80m</td>
+                        </tr>
+                        <tr>
+                            <td>Storeys</td>
+                            <td>Single</td>
+                            <td>Single</td>
+                            <td>Two</td>
+                        </tr>
+                        <tr>
+                            <td>Indoor Area</td>
+                            <td>167 m²</td>
+                            <td>140 m²</td>
+                            <td>185 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Total Area</td>
+                            <td>321 m²</td>
+                            <td>212 m²</td>
+                            <td>313 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Price (EUR)</td>
+                            <td>€1.17M</td>
+                            <td>€910K</td>
+                            <td>€780K</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lifestyle Section -->
+    <section class="lifestyle-section">
+        <div class="container">
+            <h2 class="section-title">Designed for Living — Not Just Staying</h2>
+            <p class="lifestyle-content">
+                Sunset-facing terraces, seamless indoor-outdoor flow, and calming materiality define each residence. Every home is delivered fully furnished and ready for immediate move-in or premium rental income. This is more than property — it's a lifestyle investment in one of Thailand's most sought-after island destinations.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <h2 class="section-title">Prime Location</h2>
+            <div style="text-align: center; padding: 40px 20px; background: white; border: 2px solid var(--gold);">
+                <p style="font-size: 20px; color: var(--navy); font-weight: 500; margin-bottom: 20px;">
+                    West Coast of Koh Phangan, Thailand
+                </p>
+                <p style="font-size: 18px; color: var(--slate); margin-bottom: 20px;">
+                    📍 Heart of the island • Between Srithanu and Hin Kong villages<br>
+                    The island's most sought-after coastal stretch
+                </p>
+                <p style="font-size: 16px; color: var(--slate); margin-bottom: 30px; line-height: 1.8;">
+                    • Walking distance to Zen Beach<br>
+                    • Best sunsets on the island<br>
+                    • Restaurants, cafes & co-working spaces nearby<br>
+                    • Yoga studios & fitness centers<br>
+                    • 15 minutes to Thong Sala (main town & pier)
+                </p>
+                <a href="https://maps.app.goo.gl/wukt9KP7e4JA348t8?g_st=iw" target="_blank" class="btn btn-primary">
+                    View Location on Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Legal & One-Stop Shop -->
+    <section class="legal-section">
+        <div class="container">
+            <div class="legal-content">
+                <div class="legal-box">
+                    <h3 class="legal-title">Flexible Ownership Options</h3>
+                    <p class="legal-text">
+                        <strong>Freehold</strong> via Thai company structure or <strong>Leasehold</strong> — based on your preference, legal advice, and practical considerations. We coordinate the process end-to-end with qualified Thai professionals to ensure smooth, compliant purchase and registration.
+                    </p>
+                </div>
+                
+                <div class="legal-box">
+                    <h3 class="legal-title">One Team, Full Coordination</h3>
+                    <p class="legal-text">
+                        From selection and due diligence to contracts, company setup (if chosen), and handover — we coordinate all steps with certified professionals, so you have a single point of contact throughout your purchase journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-cta">Ready to Choose Your View?</h2>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 30px;">
+                Contact us on WhatsApp to receive floor plans, pricing details, and schedule a viewing
+            </p>
+            <a href="https://wa.me/66967907754" class="footer-btn">Get Floor Plans on WhatsApp</a>
+            <div class="footer-contact">
+                <p>WhatsApp: <a href="https://wa.me/66967907754">+66 96 790 7754</a></p>
+                <p style="margin-top: 30px; opacity: 0.7;">Red Sunset KP • Exclusive Beachfront Living • Koh Phangan</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/66967907754" class="sticky-whatsapp">
+        <span>💬</span> WhatsApp
+    </a>
+    
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
